@@ -1,0 +1,24 @@
+﻿@model HelloWorldModel
+@{
+    ViewData["Title"] = "Привет";
+}
+
+<div class="text-center">
+    <h1>@ViewBag.GreetingPhrase</h1>
+    Сегодня @ViewBag.DateNow <br>
+    Московское время @ViewBag.TimeNow
+</div>
+<form asp-action="HelloWorld" method="post" style="margin: 25px auto; max-width: 400px">
+    <div class="text-center">
+        <h3>Как тебя зовут?</h3>
+    </div>
+    <div asp-validation-summary="All" class="alert alert-danger" role="alert"></div>
+    <div class="form-group">
+        <label asp-for="Name">Имя:</label>
+        <input type="text" asp-for="Name" class="w-100 form-control">
+        <small class="form-text text-muted">Представься и поздоровайся с Миром</small>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-dark w-100">Привет Мир!</button>
+    </div>
+</form>
